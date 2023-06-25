@@ -90,4 +90,29 @@ Response
 ------------------snip--------------------------------------
 <a class="btn btn-primary btn-lg" role="button" id="sign_in" href="https://facebook.com/login">Sign in</a>
 ```
+Request the response in browser session
+As soon as the sign in button is clicked the user is redirected to a facebook.com instead of atlas.xyz.tools/login.
 
+# Remediation
+
+This open redirection is possible because of unvalidated inputs gotten from the header requests. The redirection url is gotten from the host header but when the X-Forwarded-Host header is present, it can override the Host header value even if it is the correct redirection url thus the way to prevent this attack is to disable the X-Forwarded-Host Header and validate the host header value by maybe a whitelist.
+
+# Impact
+
+If you have an open redirection vulnerability, it makes many other attacks possible:
+
+1). <b>Phishing :</b> The most obvious way to use an open redirect is to steer the victim away from the original site to a site that looks the same, steal user credentials, and then return to the vulnerable website as if nothing happened.
+
+2). <b>Cross-site Scripting (XSS):</b> If the redirect allows the use of data: or javascript: protocols and the client supports such protocols in redirects, it makes it possible for the attacker to perform an XSS attack.
+
+3). <b>Server-Side Request Forgery (SSRF):</b> Open redirects may be used to evade SSRF filters.
+
+4). <b>Content-Security-Policy bypassing:</b> If you use CSP to protect against XSS and one of the whitelisted domains has an open redirect, this vulnerability may be used to bypass CSP.
+
+5). <b>CRLF Injection:</b> If the redirection parameter allows line breaks, the attacker may try to perform response header splitting.
+
+# Summary
+
+Redirects are a common part of website operations but can cause application security risks when carelessly implemented.
+
+An open redirect endpoint accepts un-trusted inputs as the target URL, allowing attackers to redirect users to a malicious website and opening up a wide array of attack vectors. Exploitation can be as simple as manually changing a URL parameter value to an attacker-controlled site.
