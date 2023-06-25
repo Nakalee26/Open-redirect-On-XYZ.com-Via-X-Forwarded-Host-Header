@@ -101,7 +101,7 @@ Response
   <img src="Burp_Suite_Community_Edition_v2020.12.1_-_Temporary_Project_27_02_2022_12_04_48.png" alt="Project Image">
 </div>
 </br>
-Request the response in browser session
+Request the response in browser session</br>
 
 <p>As soon as the sign in button is clicked the user is redirected to a facebook.com instead of atlas.xyz.tools/login.</p>
 
