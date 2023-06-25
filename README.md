@@ -90,6 +90,10 @@ Response
 ------------------snip--------------------------------------
 <a class="btn btn-primary btn-lg" role="button" id="sign_in" href="https://facebook.com/login">Sign in</a>
 ```
+<div align="center">
+  <img src="Burp_Suite_Community_Edition_v2020.12.1_-_Temporary_Project_27_02_2022_12_04_48.png" alt="Project Image">
+</div>
+
 Request the response in browser session
 As soon as the sign in button is clicked the user is redirected to a facebook.com instead of atlas.xyz.tools/login.
 
