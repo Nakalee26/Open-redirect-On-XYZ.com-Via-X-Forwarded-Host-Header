@@ -102,9 +102,7 @@ Response
 </div>
 </br>
 Request the response in browser session
-
-
-As soon as the sign in button is clicked the user is redirected to a facebook.com instead of atlas.xyz.tools/login.
+<p>As soon as the sign in button is clicked the user is redirected to a facebook.com instead of atlas.xyz.tools/login.</p>
 
 # Remediation
 
